@@ -32,8 +32,14 @@ public class ParkingLotTest {
     public void givenVehicleDetails_WhenUnParked_ShouldReturnTrue() {
 
         Vehicle vehicle = new Vehicle("MH123", "Benz");
-        boolean c = parkingLot.parkVehicle(01, vehicle);
+        parkingLot.parkVehicle(01, vehicle);
         boolean checkUnParkingDetails = parkingLot.unParkVehicle(01);
         Assert.assertTrue(checkUnParkingDetails);
+    }
+
+    @Test
+    public void givenParkingDetailsToOwner_WhenFull_ShouldReturnTrue() {
+        boolean checkParkingAvailability = new ParkingLotOwner().checkLotAvailability();
+        Assert.assertTrue(checkParkingAvailability);
     }
 }

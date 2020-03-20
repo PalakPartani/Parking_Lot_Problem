@@ -6,14 +6,19 @@ import java.util.Map;
 public class ParkingLot {
 
     private int[] parkingCapacity = new int[100];
-    Map<Integer, Vehicle> carDetails = new HashMap<>();
+    Map<Integer, Vehicle> carDetails;
+    public final static int TOTAL = 100;
+
+    public ParkingLot() {
+        carDetails = new HashMap<>();
+    }
 
     public boolean getInitialParkingCapacity() {
         return true;
     }
 
     public boolean parkVehicle(int carParkingNo, Vehicle vehicle) {
-        if (carDetails.size() <= 100) {
+        if (carDetails.size() <= TOTAL) {
             carDetails.put(carParkingNo, vehicle);
             return true;
         }
