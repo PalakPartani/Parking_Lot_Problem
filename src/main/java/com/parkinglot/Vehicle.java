@@ -6,7 +6,7 @@ public class Vehicle {
 
     public Vehicle(String numberPlate, String carName) {
 
-        this.numberPlate=numberPlate;
-        this.carName=carName;
+        this.numberPlate = numberPlate;
+        this.carName = carName;
     }
 }

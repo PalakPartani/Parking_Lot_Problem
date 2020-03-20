@@ -12,9 +12,17 @@ public class ParkingLot {
         return true;
     }
 
-    public boolean parkVehicle(int carParkingNo,Vehicle vehicle) {
+    public boolean parkVehicle(int carParkingNo, Vehicle vehicle) {
         if (carDetails.size() <= 100) {
-            carDetails.put(carParkingNo,vehicle);
+            carDetails.put(carParkingNo, vehicle);
+            return true;
+        }
+        return false;
+    }
+
+    public boolean unParkVehicle(int carParkingNo) {
+        if ((boolean) carDetails.containsKey(carParkingNo)) {
+            carDetails.remove(1);
             return true;
         }
         return false;
