@@ -39,7 +39,15 @@ public class ParkingLotTest {
 
     @Test
     public void givenParkingDetailsToOwner_WhenFull_ShouldReturnTrue() {
-        boolean checkParkingAvailability = new ParkingLotOwner().checkLotAvailability();
+        boolean checkParkingAvailability = new ParkingLotOwner().getInformed();
         Assert.assertTrue(checkParkingAvailability);
+    }
+
+    @Test
+    public void givenParkingDetails_WhenFull_ShouldReturnTrue() {
+
+        ParkingLotOwner p =new ParkingLotOwner();
+        boolean redirect = p.getInformed();
+        Assert.assertTrue(redirect);
     }
 }

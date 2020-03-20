@@ -5,9 +5,9 @@ import java.util.Map;
 
 public class ParkingLot {
 
-    private int[] parkingCapacity = new int[100];
     Map<Integer, Vehicle> carDetails;
-    public final static int TOTAL = 100;
+    public final static int TOTAL = 1;
+    private int informed;
 
     public ParkingLot() {
         carDetails = new HashMap<>();
@@ -22,7 +22,7 @@ public class ParkingLot {
             carDetails.put(carParkingNo, vehicle);
             return true;
         }
-        return false;
+        throw new ParkingLotException("Size exceeded", ParkingLotException.ExceptionType.OCCUPIED);
     }
 
     public boolean unParkVehicle(int carParkingNo) {
